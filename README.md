@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Agit Assessment - Task Manager
 
-## Getting Started
+A modern, high-performance Task Manager application built with Next.js 15, Prisma, and Tailwind CSS.
 
-First, run the development server:
+## 🚀 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/)
+- [PostgreSQL](https://www.postgresql.org/) (Running locally or a cloud provider like Supabase/Neon)
+
+## 🛠️ Installation & Setup
+
+Follow these steps to get the project running locally.
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd agit_assesment
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Environment Configuration
+
+Create a `.env` file in the root directory. You can copy the structure from a template if provided, or simply add your database connection string:
+
+```env
+# Connect to your PostgreSQL database
+DATABASE_URL="postgresql://username:password@localhost:5432/mydb?schema=public"
+```
+
+### 4. Database Setup (Prisma)
+
+Initialize your database schema and seed it with initial data.
+
+```bash
+# Generate Prisma Client
+npx prisma generate
+
+# Push schema to the database (creates tables)
+npx prisma db push
+
+# Seed the database with initial tasks
+npx prisma db seed
+```
+
+_Note: The seed command uses `prisma/seed.ts` to populate the database with sample tasks._
+
+### 5. Run the Application
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/`: Next.js App Router pages and API routes.
+- `components/`: UI components.
+- `prisma/`: Database schema and seed script.
+- `lib/`: Utility functions and validation schemas.
