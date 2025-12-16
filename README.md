@@ -1,6 +1,6 @@
 # Agit Assessment - Task Manager
 
-A modern, high-performance Task Manager application built with Next.js 15, Prisma, and Tailwind CSS.
+Made by me, Hans Immanuel Julius
 
 ## 🚀 Prerequisites
 
